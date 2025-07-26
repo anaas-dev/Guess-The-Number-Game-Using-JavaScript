@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Correct Number</title>
+</head>
+<body>
+    <script>
+        let Random_Number=Math.floor(Math.random()*100)+1;
+        let chances=0;
+        let number=null;
+        do{
+             number=prompt("Enter a number between 1 and 100 ");
+             number=Number.parseInt(number);
+             
+        if(isNaN(number) || number<1 || number>100){
+            alert("Wrong Attempt! Enter a valid number between 1 and 100");
+            continue;
+        }
+        chances++;
+
+        if(number>Random_Number){
+
+            alert("Too high! Try a smaller number");
+        }
+        else if(number<Random_Number){
+
+            alert("Too low! Try a bigger number")
+        }
+
+
+        }while(number!=Random_Number);
+
+        let Calculate_Score=100-chances;
+        alert("Congratulation! You guess the write number")
+        alert(`You take ${chances} chances to guess`);
+        alert(`You total score is ${Calculate_Score}`);
+        alert(`The correct number was ${Random_Number}`);
+
+    </script>
+</body>
+</html>
